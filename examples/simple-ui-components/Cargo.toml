@@ -1,0 +1,11 @@
+[package]
+name = "simple-ui-components"
+version = "0.1.0"
+edition = "2021"
+
+[[example]]
+name = "simple-ui-components"
+path = "src/main.rs"
+
+[dependencies]
+deft = { path = "../.." }
