@@ -8,6 +8,8 @@
 - [什么是 Deft](./guides/what-is-deft.md)
 - [快速开始指南](./guides/quick-start.md)
 - [开发环境设置](./guides/development-setup.md)
+- [系统架构和技术方案](./guides/architecture.md)
+- [Vite 构建集成](./guides/vite-integration.md)
 
 ### 平台指南
 - [Windows 平台开发](./platforms/windows.md)
@@ -27,18 +29,13 @@
 
 ### 代码示例
 - [基础示例](./examples/basic-examples.md)
-- [UI 组件示例](./examples/ui-components.md)
-- [事件处理示例](./examples/event-handling.md)
 - [自定义组件](./examples/custom-components.md)
 - [样式和主题](./examples/styling-theming.md)
-- [动画效果](./examples/animations.md)
 - [多窗口管理](./examples/multi-window.md)
-- [系统集成](./examples/system-integration.md)
+- [移动端键盘适配](./examples/mobile-keyboard-adaptation.md)
 
 ### 最佳实践
-- [项目结构](./guides/project-structure.md)
-- [性能优化](./guides/performance.md)
-- [常见问题](./guides/troubleshooting.md)
+- [常见问题和故障排除](./guides/troubleshooting.md)
 
 ## 在线资源
 
