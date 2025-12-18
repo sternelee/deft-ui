@@ -72,12 +72,12 @@ impl WsConnection {
         if let Some(result) = reader.next().await {
             let msg = result?;
             let (ty, data) = match msg {
-                Message::Text(v) => ("text", v.to_js_value()?),
-                Message::Binary(v) => ("binary", v.to_js_value()?),
-                Message::Ping(v) => ("ping", v.to_js_value()?),
-                Message::Pong(v) => ("pong", v.to_js_value()?),
+                Message::Text(v) => ("text", v.to_string().to_js_value()?),
+                Message::Binary(v) => ("binary", format!("{:?}", v).to_js_value()?),
+                Message::Ping(v) => ("ping", format!("{:?}", v).to_js_value()?),
+                Message::Pong(v) => ("pong", format!("{:?}", v).to_js_value()?),
                 Message::Close(_) => ("close", JsValue::Undefined),
-                Message::Frame(_frame) => ("frame", _frame.into_data().to_js_value()?),
+                Message::Frame(_frame) => ("frame", JsValue::Undefined),
             };
             Ok((ty.to_string(), data))
         } else {
@@ -88,7 +88,7 @@ impl WsConnection {
     #[js_func]
     pub async fn send_str(&self, data: String) -> Result<JsValue, Error> {
         let mut writer = self.inner.writer.lock().await;
-        writer.send(Message::Text(data)).await?;
+        writer.send(Message::Text(data.into())).await?;
         Ok(JsValue::Undefined)
     }
 }

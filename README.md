@@ -4,20 +4,19 @@ Deft is a framework for building desktop and mobile applications with Rust and J
 
 [![crates.io](https://img.shields.io/crates/v/deft)](https://crates.io/crates/deft)
 
-
 # Features
 
-* Hybrid programming with Rust and JavaScript
-* Non-webview core
-* Unified JavaScript engine and rendering engine
-* Themes support
-* Support React/Vue/Solid or any framework that supports custom render
+- Hybrid programming with Rust and JavaScript
+- Non-webview core
+- Unified JavaScript engine and rendering engine
+- Themes support
+- Support React/Vue/Solid or any framework that supports custom render
 
 # Limits
 
-* Not all CSS properties are supported, see [documentation](https://deft-ui.github.io/en/styles/properties/) for more details.
-* Accessibility is not yet available.
-* JavaScript debugger is not yet available.
+- Not all CSS properties are supported, see [documentation](https://deft-ui.github.io/en/styles/properties/) for more details.
+- Accessibility is not yet available.
+- JavaScript debugger is not yet available.
 
 # Component Gallery
 
@@ -26,10 +25,10 @@ Deft is a framework for building desktop and mobile applications with Rust and J
 <img width="360" src="https://github.com/deft-ui/deft/blob/main/snapshots/gallery.png?raw=true" />
 <img width="360" src="https://github.com/deft-ui/deft/blob/main/snapshots/gallery-dark.png?raw=true" />
 
-
 # Quick Start
 
 ```
+export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer && export SDKROOT=$(xcrun --sdk macosx --show-sdk-path) && cargo check
 npm create deft@latest hello-deft
 cd hello-deft
 npm install
@@ -43,14 +42,14 @@ npm run dev
 # Platforms
 
 | Platform    | Versions      | Supported      |
-|-------------|---------------|----------------|
-| Windows     | 10+           | ✅              |
-| Linux       | X11 & Wayland | ✅              |
-| MacOS       | 10.12+        | ✅              |
-| HarmonyOS   | 5+            | ✅experimental  |
-| Android     | 6+            | ✅experimental  |
-| iOS         | -             | ✅experimental  |
-| WebAssembly | -             | ✅experimental  |
+| ----------- | ------------- | -------------- |
+| Windows     | 10+           | ✅             |
+| Linux       | X11 & Wayland | ✅             |
+| MacOS       | 10.12+        | ✅             |
+| HarmonyOS   | 5+            | ✅experimental |
+| Android     | 6+            | ✅experimental |
+| iOS         | -             | ✅experimental |
+| WebAssembly | -             | ✅experimental |
 
 # Develop
 
@@ -69,20 +68,25 @@ apt install build-essential libssl-dev libclang-dev libc++-dev \
 ### Run demo
 
 Native:
+
 ```
 cd examples/gallery
 cargo run
 ```
 
 Wasm:
+
 > Make sure that [Emscripten SDK](https://emscripten.org/docs/getting_started/downloads.html) is installed.
+
 ```bash
 cd examples/gallery
 cargo build --target wasm32-unknown-emscripten --release
 python3 -m http.server
 ```
+
 Visit `http://localhost:8000/web/` to preview.
 
 # License
 
 MIT
+

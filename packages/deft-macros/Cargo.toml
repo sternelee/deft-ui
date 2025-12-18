@@ -11,6 +11,6 @@ proc-macro = true
 path = "src/lib.rs"
 
 [dependencies]
-quote = "1.0.37"
-syn = { version = "2.0.85",features = ["full"] }
+quote = "1.0.38"
+syn = { version = "2.0.95",features = ["full"] }
 #deft-core = { path = "../deft-core" }

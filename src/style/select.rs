@@ -1,7 +1,7 @@
 use crate::element::Element;
 use crate::some_or_return;
 use anyhow::{anyhow, Error};
-use cssparser::{self, CowRcStr, ParseError, SourceLocation, ToCss};
+use cssparser::{self, CowRcStr, ParseError, SourceLocation, ToCss, Parser as CssParser};
 use selectors::attr::{AttrSelectorOperation, CaseSensitivity, NamespaceConstraint};
 use selectors::context::{MatchingMode, QuirksMode};
 use selectors::parser::{Component, SelectorParseErrorKind};
@@ -286,7 +286,7 @@ pub struct Selector {
 impl Selectors {
     pub fn compile(s: &str) -> Result<Selectors, Error> {
         let mut input = cssparser::ParserInput::new(s);
-        match SelectorList::parse(&DeftParser, &mut cssparser::Parser::new(&mut input)) {
+        match SelectorList::parse(&DeftParser, &mut CssParser::new(&mut input)) {
             Ok(list) => Ok(Selectors(
                 list.0.into_iter().map(|s| Selector::new(s)).collect(),
             )),
@@ -363,7 +363,12 @@ impl Selector {
         } else {
             MatchingMode::Normal
         };
-        let mut context = matching::MatchingContext::new(mode, None, None, QuirksMode::NoQuirks);
+        let mut context = matching::MatchingContext::new(
+            mode,
+            None,
+            None,
+            QuirksMode::NoQuirks,
+        );
         matching::matches_selector(
             &self.selector,
             0,
