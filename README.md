@@ -36,9 +36,37 @@ npm install
 npm run dev
 ```
 
-[Documentation](https://deft-ui.github.io/en/guides/what-is-deft/)
+# Documentation
 
-[Demos](https://deft-ui.github.io/en/demos/)
+📚 **Comprehensive Documentation Available!**
+
+- [Getting Started](./docs/guides/quick-start.md) - Quick start guide for beginners
+- [Development Setup](./docs/guides/development-setup.md) - Environment setup for all platforms
+- [What is Deft](./docs/guides/what-is-deft.md) - Framework overview and architecture
+
+## Platform Guides
+- [Windows Development](./docs/platforms/windows.md)
+- [Linux Development](./docs/platforms/linux.md)
+- [Android Development](./docs/platforms/android.md)
+- [More platforms...](./docs/platforms/)
+
+## API Reference
+- [UI Components](./docs/api/ui-components.md) - Complete component reference
+- [Events](./docs/api/events.md) - Event system
+- [Styling](./docs/api/styling.md) - Style system
+
+## Code Examples
+- [Basic Examples](./docs/examples/basic-examples.md) - Hello World, Counter, Todo List
+- [Custom Components](./docs/examples/custom-components.md) - Creating reusable components
+- [More examples...](./docs/examples/)
+
+## Online Resources
+
+[Official Documentation](https://deft-ui.github.io/en/guides/what-is-deft/)
+
+[Live Demo (WASM)](https://deft-ui.github.io/gallery/)
+
+[More Demos](https://deft-ui.github.io/en/demos/)
 
 # Platforms
 
@@ -66,15 +94,33 @@ apt install build-essential libssl-dev libclang-dev libc++-dev \
     libasound2-dev libegl-dev libgles-dev librust-wayland-egl-dev
 ```
 
-### Run demo
+# Examples
 
-Native:
-```
+### Run Built-in Examples
+
+**Gallery Demo** (Native):
+```bash
 cd examples/gallery
 cargo run
 ```
 
-Wasm:
+**Simple UI Components**:
+```bash
+cd examples/simple-ui-components
+cargo run
+```
+
+**Hello World**:
+```bash
+cargo run --example hello
+```
+
+**Custom Elements**:
+```bash
+cargo run --example custom_element
+```
+
+**WebAssembly Demo**:
 > Make sure that [Emscripten SDK](https://emscripten.org/docs/getting_started/downloads.html) is installed.
 ```bash
 cd examples/gallery
